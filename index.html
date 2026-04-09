@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiki Yukari Website</title>
+    <style>
+        /* Carregando a fonte personalizada (Levenim MT) */
+        @font-face {
+            font-family: 'LevenimMT';
+            src: url('Levenim MT Regular.ttf') format('truetype');
+        }
+
+        /* Fundo com imagem photo.png e sombreamento superior */
+        body {
+            background-color: #050b1a; 
+            /* Múltiplas camadas: Degradê preto no topo (linear-gradient) + Imagem de fundo */
+            background-image: 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 40%), /* Degradê preto */
+                url('photo.png'); /* Sua imagem */
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+            margin: 0;
+            padding: 0;
+            font-family: 'LevenimMT', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            min-height: 100vh;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Container Principal */
+        .main-content {
+            width: 500px; 
+            margin-top: 50px;
+            animation: fadeUp 1.2s ease-out;
+            padding-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container {
+            position: relative;
+            text-align: center;
+            width: 100%;
+        }
+
+        .image1-header {
+            width: 100%; 
+            height: auto;
+            border-radius: 15px;
+            display: block;
+            filter: brightness(0.6);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .header-text p {
+            font-size: 1rem;
+            margin: 8px 0 0;
+        }
+
+        /* Seção de Voicebanks - CENTRALIZADA */
+        .vb-section {
+            width: 100%;
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .vb-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .vb-card {
+            position: relative;
+            width: 200px; 
+            height: 110px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .vb-card:hover { transform: scale(1.04); }
+
+        .vb-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vb-label {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            padding: 4px 0;
+            color: white;
+            z-index: 1;
+            background: rgba(0,0,0,0.45);
+        }
+
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.88);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(18px);
+            transition: all 0.4s ease;
+        }
+
+        .vb-card:hover .hover-overlay {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .hover-overlay p {
+            margin: 0;
+            font-size: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .credits {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <header class="header-container">
+            <img src="image1.jpg" alt="Yukari Top" class="image1-header">
+            <div class="header-text">
+                <h1>Hiki Yukari Website</h1>
+                <p>Download her VBs here!</p>
+            </div>
+        </header>
+
+        <div class="vb-section">
+            
+            <a href="https://drive.google.com/file/d/16-nl6v2en_MHVvmHY4bvTmmrTW-KALsu/view?usp=sharing" target="_blank" class="vb-link">
+                <div class="vb-card">
+                    <img src="image2.bmp" alt="Hiki Yukari ACT1 CV demo">
+                    <div class="vb-label">Hiki Yukari ACT1 CV demo</div>
+                    <div class="hover-overlay"><p>Yukari's first vb (demo)</p></div>
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/16rSToAq5cTpOKIElMCmZwjiS9mRI3hL6/view?usp=drivesdk" target="_blank" class="vb-link">
+                <div class="vb-card">
+                    <img src="image3.png" alt="Hiki Yukari ACT2 CV">
+                    <div class="vb-label">Hiki Yukari ACT2 CV</div>
+                    <div class="hover-overlay"><p>Yukari's second vb, more fluent but more robotic</p></div>
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1U8U6nmFXyvsBP8TOX_jI3P86381Y3h6b/view" target="_blank" class="vb-link">
+                <div class="vb-card">
+                    <img src="image4.png" alt="Hiki Yukari ACT3 CVVC">
+                    <div class="vb-label">Hiki Yukari ACT3 CVVC</div>
+                    <div class="hover-overlay"><p>Yukari's first non-CV vb, sounds smoother but is a bit more robotic</p></div>
+                </div>
+            </a>
+
+            <a href="https://www.mediafire.com/file/sbtkmu93pou0tah/hiki.zip/file" target="_blank" class="vb-link">
+                <div class="vb-card">
+                    <img src="image5.bmp" alt="Hiki Yukari VCV beta">
+                    <div class="vb-label">Hiki Yukari VCV beta</div>
+                    <div class="hover-overlay">
+                        <p>Yukari's first VCV vb, sounds much more fluent but has a more nasal voice, and it's not finished yet.</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <p class="credits">credits: Edusheep and Defoko Nr1 Fan! :3</p>
+    </div>
+
+</body>
+</html>
